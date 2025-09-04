@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 1: Gerador de Nomes Moderno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="blob-c">
+      <div class="blob"></div>
+      <div class="blob"></div>
+    </div>
+
+    <div class="container">
+      <h1>Gerador de Nomes</h1>
+      <p class="subtitle">Dê vida a personagens e nicks.</p>
+
+      <div class="opcoes">
+        <label for="tema">Escolha um tema:</label>
+        <select id="tema">
+          <option value="medieval">Medieval</option>
+          <option value="futurista">Futurista</option>
+          <option value="comum">Comum</option>
+        </select>
+      </div>
+
+      <button id="gerar-nome">Gerar</button>
+
+      <div class="resultado">
+        <h2 id="nome-gerado">Seu nome aparecerá aqui</h2>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
