@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 4: Cronômetro e Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <nav class="tabs">
+        <button class="tab-button active" data-mode="stopwatch">
+          Cronômetro
+        </button>
+        <button class="tab-button" data-mode="timer">Timer</button>
+      </nav>
+
+      <div class="timer-display">
+        <span id="time-display">00:00:00.000</span>
+      </div>
+
+      <div class="timer-inputs hidden">
+        <input type="number" id="hours" placeholder="HH" min="0" max="99" />
+        <input type="number" id="minutes" placeholder="MM" min="0" max="59" />
+        <input type="number" id="seconds" placeholder="SS" min="0" max="59" />
+      </div>
+
+      <div class="controls">
+        <button id="start-stop-btn">Iniciar</button>
+        <button id="reset-lap-btn">Resetar</button>
+      </div>
+
+      <div class="laps">
+        <ul id="laps-list"></ul>
+      </div>
+    </div>
+
+    <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

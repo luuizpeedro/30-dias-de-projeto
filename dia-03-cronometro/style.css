@@ -1,0 +1,166 @@
+:root {
+  --bg-dark: #1a1a2e;
+  --card-bg: #16213e;
+  --display-bg: #0f3460;
+  --primary-text: #e94560;
+  --secondary-text: #e0e0e0;
+  --button-bg: #1f4068;
+  --button-start: #16c79a;
+  --button-stop: #e94560;
+  --font-display: "Roboto Mono", monospace;
+  --font-body: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-body);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--display-bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  background: none;
+  color: var(--secondary-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: var(--primary-text);
+  color: white;
+}
+
+.timer-display {
+  background-color: var(--display-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#time-display {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--primary-text);
+  letter-spacing: 2px;
+}
+
+.timer-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timer-inputs input {
+  width: 60px;
+  padding: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: var(--display-bg);
+  border: 1px solid var(--button-bg);
+  color: var(--secondary-text);
+  border-radius: 5px;
+}
+
+/* Esconde as setas do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.controls button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+#start-stop-btn {
+  background-color: var(--button-start);
+  color: var(--bg-dark);
+}
+
+#reset-lap-btn {
+  background-color: var(--button-bg);
+  color: var(--secondary-text);
+}
+
+.laps {
+  margin-top: 1.5rem;
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+#laps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--secondary-text);
+}
+
+#laps-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--button-bg);
+}
+#laps-list li:last-child {
+  border-bottom: none;
+}
+
+/* Classes de utilidade */
+.hidden {
+  display: none !important;
+}
+
+/* Animação para quando o timer acabar */
+.timer-finished {
+  animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    box-shadow: 0 0 20px 10px rgba(233, 69, 96, 0.7);
+  }
+  to {
+    box-shadow: 0 0 10px 5px rgba(233, 69, 96, 0.3);
+  }
+}
