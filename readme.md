@@ -9,7 +9,7 @@ Este repositório é um desafio pessoal de criar **1 projeto por dia durante 30 
 - [✅] Dia 01 – Gerador de Nomes Aleatórios
 - [✅] Dia 02 – Conversor de Unidades
 - [✅] Dia 03 – Cronômetro / Timer
-- [ ] Dia 04 – Conversor de Moedas
+- [✅] Dia 04 – Conversor de Moedas
 - [ ] Dia 05 – Calculadora
 - [ ] Dia 06 – Relógio Pomodoro / Foco
 - [ ] Dia 07 – Quiz
