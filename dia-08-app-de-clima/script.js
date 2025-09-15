@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // COLE SUA CHAVE DA API AQUI
-  const apiKey = "6ebdcbda1036348ae4d70970fed64bd2   ";
+  const apiKey = "6ebdcbda1036348ae4d70970fed64bd2";
 
   // MAPEAMENTO DE ELEMENTOS
   const cityInput = document.getElementById("city-input");
