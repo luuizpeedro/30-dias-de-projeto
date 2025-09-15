@@ -1,0 +1,135 @@
+:root {
+  --bg-color: #111;
+  --card-bg-color: #222;
+  --card-text-color: #f0f0f0;
+  --separator-color: #444;
+  --font-family: "Roboto Mono", monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.clock {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.digit-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.separator {
+  font-size: 6rem;
+  color: var(--separator-color);
+  font-weight: 700;
+}
+
+.digit {
+  position: relative;
+  width: 80px;
+  height: 120px;
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  font-size: 7rem;
+  line-height: 120px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  perspective: 300px;
+}
+
+/* Cria o número estático (fundo) */
+.digit::before,
+.digit::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  content: attr(data-value);
+}
+
+.digit::before {
+  /* Metade de cima */
+  top: 0;
+  line-height: 120px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.digit::after {
+  /* Metade de baixo */
+  bottom: 0;
+  line-height: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+/* --- A MÁGICA DA ANIMAÇÃO DE FLIP ESTÁ AQUI --- */
+
+/* 1. A carta que vira ('flipper') */
+.flipper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  /* A transição que cria a animação suave */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 2. Classe adicionada via JS para ACIONAR a animação */
+.digit.flipping .flipper {
+  transform: rotateX(-180deg); /* Vira a carta 180 graus */
+}
+
+/* 3. As duas faces da carta que vira */
+.flipper::before,
+.flipper::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde a face de trás */
+  background-color: var(--card-bg-color);
+}
+
+.flipper::before {
+  /* Face da frente (mostra o número antigo) */
+  top: 0;
+  line-height: 120px;
+  content: attr(data-old-value);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.flipper::after {
+  /* Face de trás (mostra o número novo) */
+  bottom: 0;
+  line-height: 0;
+  transform: rotateX(180deg);
+  content: attr(data-new-value);
+  border-radius: 0 0 10px 10px;
+}
+
+/* --- ESTILO PARA A DATA ATUAL --- */
+.date-container {
+  margin-top: 2rem;
+  color: #888;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}

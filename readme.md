@@ -14,8 +14,8 @@ Este repositório é um desafio pessoal de criar **1 projeto por dia durante 30 
 - [✅] Dia 06 – Relógio Pomodoro / Foco
 - [✅] Dia 07 – Quiz
 - [✅] Dia 08 – App de Clima
-- [ ] Dia 09 – Lista de Filmes
-- [ ] Dia 10 – Relógio Digital
+- [✅] Dia 09 – Lista de Filmes
+- [✅] Dia 10 – Relógio Digital
 - [ ] Dia 11 – Encurtador de Links
 - [ ] Dia 12 – Página de Login
 - [ ] Dia 13 – Chat em tempo real
