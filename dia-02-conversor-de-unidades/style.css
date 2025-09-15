@@ -1,0 +1,165 @@
+:root {
+  --bg-color: #f4f7f9;
+  --card-bg-color: #ffffff;
+  --primary-color: #4a6cf7;
+  --text-color: #1a202c;
+  --label-color: #718096;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(74, 108, 247, 0.1);
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.converter-wrapper {
+  background-color: var(--card-bg-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.category-selector {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--label-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+.converter-body {
+  display: grid;
+  /* Define 3 colunas: esquerda (1fr), centro (auto), direita (1fr) */
+  grid-template-columns: 1fr auto 1fr;
+  /* Define 3 linhas para labels, selects, e inputs */
+  grid-template-rows: auto auto auto;
+  gap: 0.8rem 1rem; /* 0.8rem de espaço entre linhas, 1rem entre colunas */
+  align-items: center; /* Centraliza verticalmente cada item em sua célula do grid */
+}
+
+/* --- Posicionamento Explícito de Cada Elemento no Grid --- */
+
+/* Coluna 1 (De) */
+.grid-label-from {
+  grid-column: 1;
+  grid-row: 1;
+}
+.grid-select-from {
+  grid-column: 1;
+  grid-row: 2;
+}
+.grid-input-from {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Coluna 2 (Botão) */
+.grid-swap-button {
+  grid-column: 2;
+  grid-row: 2; /* <-- AQUI ESTÁ A MUDANÇA */
+  align-self: center; /* Garante alinhamento vertical perfeito na nova linha */
+}
+
+/* Coluna 3 (Para) */
+.grid-label-to {
+  grid-column: 3;
+  grid-row: 1;
+}
+.grid-select-to {
+  grid-column: 3;
+  grid-row: 2;
+}
+.grid-result-to {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+/* --- Estilização dos Componentes (sem hacks de alinhamento) --- */
+
+.swap-button {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  color: var(--label-color);
+}
+
+.swap-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 0 10px var(--shadow-color);
+  transform: rotate(180deg);
+}
+
+.swap-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.result-box {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  min-height: 48px; /* Altura mínima para alinhar com o input */
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--label-color);
+  font-size: 0.8rem;
+  min-height: 20px;
+}

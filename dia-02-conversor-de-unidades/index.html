@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 3: Conversor de Unidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="converter-wrapper">
+      <header>
+        <h1>Conversor de Unidades</h1>
+        <div class="category-selector">
+          <label for="category">Categoria:</label>
+          <select id="category">
+            <option value="length">Comprimento</option>
+            <option value="weight">Peso</option>
+            <option value="temperature">Temperatura</option>
+          </select>
+        </div>
+      </header>
+
+      <main class="converter-body">
+        <label for="from-unit" class="grid-label-from">De:</label>
+        <select id="from-unit" class="grid-select-from"></select>
+        <input
+          type="number"
+          id="input-value"
+          class="grid-input-from"
+          placeholder="Digite o valor"
+        />
+
+        <button
+          class="swap-button grid-swap-button"
+          id="swap-button"
+          title="Inverter unidades"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </button>
+
+        <label for="to-unit" class="grid-label-to">Para:</label>
+        <select id="to-unit" class="grid-select-to"></select>
+        <div id="result" class="result-box grid-result-to">--</div>
+      </main>
+
+      <footer>
+        <p id="formula-display">Fórmula: --</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
