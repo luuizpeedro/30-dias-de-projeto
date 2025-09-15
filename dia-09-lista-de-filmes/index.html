@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 09: Lista de Filmes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Meus Filmes Favoritos</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Busque por um filme..."
+          />
+          <button id="search-button">Buscar</button>
+        </div>
+      </header>
+      <main class="main-content">
+        <section class="search-results-section">
+          <h2>Resultados da Busca</h2>
+          <div id="search-results" class="movie-grid"></div>
+        </section>
+        <section class="favorites-section">
+          <h2>Meus Favoritos</h2>
+          <div id="favorite-movies" class="movie-grid"></div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
