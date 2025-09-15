@@ -1,0 +1,148 @@
+/* --- VARIAVEIS DE TEMA --- */
+:root,
+[data-theme="light"] {
+  --bg-color: #e0e0e0;
+  --calculator-bg: #e0e0e0;
+  --display-bg: #dde1e7;
+  --text-color: #333;
+  --accent-color: #3498db;
+  --button-bg: #e0e0e0;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --toggle-bg: #dde1e7;
+  --toggle-fg: #3498db;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1b28;
+  --calculator-bg: #222436;
+  --display-bg: #1a1b28;
+  --text-color: #f0f0f0;
+  --accent-color: #ff9a00;
+  --button-bg: #262840;
+  --shadow-light: #2d2f4a;
+  --shadow-dark: #12131f;
+  --toggle-bg: #1a1b28;
+  --toggle-fg: #ff9a00;
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.calculator {
+  background-color: var(--calculator-bg);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 375px;
+  box-shadow: 10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- HEADER E SELETOR DE TEMA --- */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+#theme-toggle {
+  display: none;
+}
+#theme-toggle + label {
+  background-color: var(--toggle-bg);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  width: 60px;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+}
+#theme-toggle + label::after {
+  background-color: var(--toggle-fg);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  transition: all 0.3s ease;
+  width: 22px;
+}
+#theme-toggle:checked + label::after {
+  left: 34px; /* 60 - 22 - 4 */
+}
+
+/* --- DISPLAY --- */
+.display {
+  background-color: var(--display-bg);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 8px 8px 15px var(--shadow-dark),
+    inset -8px -8px 15px var(--shadow-light);
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.previous-operand {
+  min-height: 24px;
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+.current-operand {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+/* --- TECLADO --- */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.keypad button {
+  border: none;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--button-bg);
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+  transition: all 0.1s ease-in-out;
+}
+.keypad button:active {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+    inset -5px -5px 10px var(--shadow-light);
+  transform: scale(0.98);
+}
+.keypad button[data-type="operator"] {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+.keypad button[data-action="equals"] {
+  background-color: var(--accent-color);
+  color: white;
+}
+.keypad .span-two {
+  grid-column: span 2;
+}
