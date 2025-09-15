@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dia 7: Aplicativo de Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1>Quiz de Tecnologia</h1>
+      <div class="quiz-header">
+        <div id="progress-bar-full">
+          <div id="progress-bar"></div>
+        </div>
+        <p id="progress-text">Pergunta 1 de 10</p>
+      </div>
+      <h2 id="question">Aqui vai a pergunta...</h2>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Resposta 1</button>
+        <button class="btn">Resposta 2</button>
+        <button class="btn">Resposta 3</button>
+        <button class="btn">Resposta 4</button>
+      </div>
+      <div class="controls">
+        <button id="next-btn" class="hidden">Próxima</button>
+      </div>
+      <div id="final-score" class="hidden">
+        <h2>Você completou o Quiz!</h2>
+        <p>Sua pontuação final foi: <span id="score-text">0</span></p>
+        <button id="restart-btn">Jogar Novamente</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
